@@ -1,14 +1,132 @@
 <!DOCTYPE html>
-<lang en>
+<html lang="en">
 <head>
-<title>Hannah's Website</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hannah's Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        nav {
+            margin-top: 1rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+        main {
+            padding: 2rem;
+            text-align: center;
+        }
+        .hero {
+            margin: 2rem 0;
+        }
+        .hero img {
+            max-width: 200px;
+            border-radius: 50%;
+        }
+        .hero h2 {
+            margin: 1rem 0;
+            font-size: 2rem;
+        }
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+        .project {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            padding: 1rem;
+            text-align: left;
+            transition: transform 0.2s;
+        }
+        .project:hover {
+            transform: scale(1.05);
+        }
+        .project img {
+            max-width: 100%;
+            border-radius: 4px;
+        }
+        .project h3 {
+            margin: 1rem 0 0.5rem;
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
-<h1>Welcome to my website!</h1>
-<h3>Test hey this is an example of a pull request</h3>
-<p><a href="https://www.linkedin.com/in/hannah-cahill/">LinkedIn </a></p>
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
+    <main>
+        <section class="hero" id="about">
+            <img src="your-photo.jpg" alt="Your Photo">
+            <h2>Hello, I'm Hannah</h2>
+            <p>A passionate [Your Profession] dedicated to crafting excellent solutions.</p>
+        </section>
+
+        <section class="projects" id="projects">
+            <div class="project">
+                <img src="project1.jpg" alt="Project 1">
+                <h3>Project 1</h3>
+                <p>Brief description of your project. Highlight the key features and technologies used.</p>
+            </div>
+            <div class="project">
+                <img src="project2.jpg" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>Brief description of your project. Highlight the key features and technologies used.</p>
+            </div>
+            <div class="project">
+                <img src="project3.jpg" alt="Project 3">
+                <h3>Project 3</h3>
+                <p>Brief description of your project. Highlight the key features and technologies used.</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out to me on <a href="mailto:hannahcahill55@gmail.com">hannahcahill55@gmail.com</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Hannah Cahill. All rights reserved.</p>
+    </footer>
 </body>
-</lang>
 </html>
