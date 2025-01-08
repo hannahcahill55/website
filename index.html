@@ -13,7 +13,7 @@
             background-color: #f4f4f9;
         }
         header {
-            background-color: #4CAF50;
+            background-color: #98fbcb;
             color: white;
             padding: 1rem 0;
             text-align: center;
@@ -21,6 +21,14 @@
         header h1 {
             margin: 0;
             font-size: 2.5rem;
+        }
+        .outline {
+            text-shadow: 
+        -1px -1px 0 black, /* Top-left shadow */
+        1px -1px 0 black,  /* Top-right shadow */
+        -1px 1px 0 black,  /* Bottom-left shadow */
+        1px 1px 0 black;   /* Bottom-right shadow */
+            color: #FFFFFF;
         }
         nav {
             margin-top: 1rem;
@@ -73,7 +81,7 @@
             margin: 1rem 0 0.5rem;
         }
         footer {
-            background-color: #4CAF50;
+            background-color: #98fbcb;
             color: white;
             text-align: center;
             padding: 1rem 0;
@@ -86,11 +94,11 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to My Portfolio</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="contact.html">Contact</a>
+        <h1 class="outline">Welcome to My Portfolio</h1>
+        <nav class="outline">
+            <a href="#about" class="outline">About</a>
+            <a href="#projects" class="outline">Projects</a>
+            <a href="contact.html" class="outline">Contact</a>
         </nav>
     </header>
 
@@ -98,7 +106,7 @@
         <section class="hero" id="about">
             <img src="beach%20photo.jpg" alt="Your Photo">
             <h2>Hello, I'm Hannah</h2>
-            <p>A passionate [Your Profession] dedicated to crafting excellent solutions.</p>
+            <p>Information Science and Technology Major and Aspiring Digital Forensics Investigator.</p>
         </section>
 
         <section class="projects" id="projects">
@@ -121,12 +129,12 @@
 
         <section id="contact">
             <h2>Contact Me</h2>
-            <p>Feel free to reach out to me on <a href="mailto:hannahcahill55@gmail.com">hannahcahill55@gmail.com</a>.</p>
+            <p>Feel free to reach out to me at <a href="mailto:hannahcahill55@gmail.com">hannahcahill55@gmail.com</a>.</p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Hannah Cahill. All rights reserved.</p>
+        <p class="outline">&copy; 2025 Hannah Cahill. All rights reserved.</p>
     </footer>
 </body>
 </html>
