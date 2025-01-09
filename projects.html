@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            background-color: #e4f2ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+        }
+        .projects-container {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 800px;
+        }
+        .projects-container h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+        .project {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #007bff;
+            margin-bottom: 0.5rem;
+        }
+        .project-title a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+        .project-title a:hover {
+            color: #0056b3;
+        }
+        .project-description {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        .return a {
+            display: inline-block;
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+        .return a:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Projects</h1>
+    </header>
+
+    <div class="projects-container">
+        <h2>Featured Projects</h2>
+        
+        <div class="project">
+            <h3 class="project-title">
+                <a href="https://wdchiesa.soisweb.uwm.edu/assignment/final_project/login.php" target="_blank">BMI Calculator</a>
+            </h3>
+            <p class="project-description">In a group project, I helped design and develop a website for a BMI (Body Mass Index) calculator tailored to the needs of the United States Air Force. The project required us to combine technical programming skills with user-focused design to create a functional and intuitive tool.</p>
+            <p>Username: admin</p>
+            <p>Password: password</p>
+        </div>
+
+        <div class="project">
+            <h3 class="project-title">
+                <a href="https://github.com/your-repo/project-2" target="_blank">Project 2</a>
+            </h3>
+            <p class="project-description">A brief description of Project 2, showcasing its unique aspects and functionality.</p>
+        </div>
+
+        <div class="project">
+            <h3 class="project-title">
+                <a href="https://github.com/your-repo/project-3" target="_blank">Project 3</a>
+            </h3>
+            <p class="project-description">A short summary of Project 3, mentioning the technologies used and its goals.</p>
+        </div>
+
+        <div class="return">
+            <a href="index.html">Return Home</a>
+        </div>
+    </div>
+</body>
+</html>
