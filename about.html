@@ -25,7 +25,7 @@
             font-size: 2.5rem;
             color: #2c3e50;
         }
-        .about-container {
+        .about-container, .resume-container {
             background: #fff0f5;
             border: 1px solid #ddd;
             border-radius: 8px;
@@ -34,25 +34,36 @@
             text-align: center;
             width: 90%;
             max-width: 500px;
+            margin-bottom: 1.5rem;
         }
-        .about-container h2 {
+        .about-container h2, .resume-container h2 {
             color: #2c3e50;
             margin-bottom: 1rem;
         }
-        .about-container p {
+        .about-container p, .resume-container p {
             font-size: 1.1rem;
             color: #555;
             line-height: 1.6;
+        }
+        .resume-container a {
+            font-size: 1.2rem;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+        .resume-container a:hover {
+            color: #fb6f92;
         }
         .return a {
             font-size: 1.2rem;
             color: #333;
             text-decoration: none;
             transition: color 0.3s;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Add subtle shading */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
         }
         .return a:hover {
-            color: #fb6f92; /* Change the text color to pink on hover */
+            color: #fb6f92;
         }
     </style>
 </head>
@@ -66,8 +77,17 @@
         <p>
             I am a recent graduate from the University of Wisconsin-Milwaukee, where I earned a Bachelor of Science in Information Studies with a minor in Criminal Justice.
         </p>
-        <p>
-            <br>
-            <div class ="return">
+        <div class="return">
             <a href="index.html" target="_blank">Return Home</a>
-            </div>
+        </div>
+    </div>
+
+    <div class="resume-container">
+        <h2>My Resume</h2>
+        <p>
+            Check out my professional experience, skills, and accomplishments by viewing my resume.
+        </p>
+        <a href="hannahresume.pdf" target="_blank">Download My Resume</a>
+    </div>
+</body>
+</html>
