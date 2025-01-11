@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dropdown Menu</title>
+<style>
+    body{
+        background-color:mistyrose;
+    }
+    h1{
+        text-align: center;
+        color: lemonchiffon;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        text-shadow: 4px 4px 4px palevioletred;
+        letter-spacing: 7px;
+    }
+    #menu *{
+        margin: 0;
+        padding: 0;
+    }
+    #menu{
+        position:-webkit-sticky;
+        position: sticky;
+        top: 0;
+    }
+    .clear{
+        clear: both;
+    }
+    #menu li{
+        position: relative;
+        float: left;
+        list-style: none;
+    }
+    #menu li a{
+        width: 340px;
+        height: 60px;
+        display: inline-block;
+        text-decoration: none;
+        text-align: center;
+        line-height: 30px;
+        background-color:lemonchiffon;
+        color:palevioletred;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #menu li a:hover{
+        background: lightblue;
+        text-decoration:underline;
+    }
+    #menu ul ul{
+        position: absolute;
+        top: 35px;
+        visibility: hidden;
+    }
+    #menu ul li:hover ul{
+        visibility: visible;
+        z-index: 100;
+    }
+    #images{
+        position:relative;
+    }
+
+
+</style>
+</head>
+<body>
+    <h1>Anna Maria Island</h1>
+    <div id="menu">
+        <ul>
+        <li><a href="#">Rental Companies</a>
+        <ul>
+            <li> <a href="#">Sato</a></li>
+            <li> <a href="#">AMI Accommodations</a></li>
+            <li> <a href="#">Robinhood Rentals</a></li>
+            <li> <a href="#">Beach Bums</a></li>
+            <li> <a href="#">Lazy Turtle Beach Rentals</a></li>
+        </ul>
+    </li>
+    <li><a href="#">Activities</a>
+        <ul>
+            <li> <a href="#">Anna Maria City Pier</a></li>
+            <li> <a href="#">Rod & Reel Pier</a></li>
+            <li> <a href="#">Bean Point</a></li>
+            <li> <a href="#">Holmes Beach</a></li>
+            <li> <a href="#">Sand Dollar Painting</a></li>
+        </ul>
+    </li>
+    <li><a href="#">Restaurants</a>
+        <ul>
+            <li> <a href="#">Sandbar</a></li>
+            <li> <a href="#">Ginny & Jane E's</a></li>
+            <li> <a href="#">Harry's Grill</a></li>
+            <li> <a href="#">The Waterfront</a></li>
+            <li> <a href="#">The Ugly Grouper</a></li>
+        </ul>
+        </li>
+        <li><a href="#">Shopping</a>
+        <ul>
+            <li> <a href="#">Shiny Fish Emporium</a></li>
+            <li> <a href="#">Pineapple Junktion</a></li>
+            <li> <a href="#">Island Bazar</a></li>
+            <li> <a href="#">Two Sides of Nature</a></li>
+            <li> <a href="#">Flip Flop Candy Shop</a></li>
+        </ul>
+        </li>
+    </div>
+    <div class="clear"></div>
+    <br>
+    <br>
+    <div class="images">
+    <img class="beachbums" src="https://cdn.lifefamilyfun.com/wp-content/uploads/2018/06/Beach-Bums-Island-Anna-Maria-Island.jpg" width="335" height="335">   <img class="pier" src="https://www.dansfloridacondos.com/wp-content/uploads/2020/06/Anna-Maria-City-Pier-Grand-Opening.jpg" width="335" height="335">  <img class="sandbar" src="https://www.amisland.com/wp-content/uploads/2019/09/the-sandbar.jpg" width="335" height="335">  <img clas="fish" src="https://cdn.lifefamilyfun.com/wp-content/uploads/2018/06/shiny-fish-emporium-3.jpg" width="335" height="335">
+    </div>
+</body>
+</html>
