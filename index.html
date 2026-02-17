@@ -8,29 +8,39 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
+:root {
+    --bg: #f9fafb;
+    --text: #1f2937;
+    --card: #ffffff;
+    --accent: #2563eb;
+    --nav: #111827;
+}
+
+body.dark {
+    --bg: #0f172a;
+    --text: #e5e7eb;
+    --card: #1e293b;
+    --accent: #60a5fa;
+    --nav: #020617;
+}
+
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    color: #1f2937;
-    background-color: #f9fafb;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.3s, color 0.3s;
 }
 
-/* HEADER */
+/* STICKY NAV */
 header {
-    background-color: #111827;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--nav);
     color: white;
-    padding: 1.2rem 0;
+    padding: 1rem 0;
     text-align: center;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.2rem;
-    font-weight: 700;
-}
-
-nav {
-    margin-top: 0.5rem;
 }
 
 nav a {
@@ -38,11 +48,22 @@ nav a {
     text-decoration: none;
     margin: 0 1rem;
     font-weight: 500;
-    transition: color 0.3s;
 }
 
 nav a:hover {
-    color: #60a5fa;
+    color: var(--accent);
+}
+
+.dark-toggle {
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    background: var(--accent);
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
 /* MAIN */
@@ -61,62 +82,72 @@ main {
 .hero img {
     width: 160px;
     border-radius: 50%;
-    margin-bottom: 1rem;
-}
-
-.hero h2 {
-    font-size: 2.2rem;
-    margin-bottom: 0.5rem;
-}
-
-.hero p {
-    font-size: 1.1rem;
-    color: #4b5563;
-    margin-bottom: 1.5rem;
 }
 
 .cta-btn {
     display: inline-block;
-    background: #2563eb;
+    background: var(--accent);
     color: white;
     padding: 0.7rem 1.4rem;
     border-radius: 6px;
     text-decoration: none;
     font-weight: 500;
-    transition: background 0.25s;
+    margin-top: 1rem;
 }
 
-.cta-btn:hover {
-    background: #1d4ed8;
+/* SKILLS */
+.skills {
+    margin-top: 4rem;
+}
+
+.skill {
+    margin-bottom: 1.2rem;
+}
+
+.skill-name {
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.skill-bar {
+    background: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
+    height: 10px;
+}
+
+body.dark .skill-bar {
+    background: #334155;
+}
+
+.skill-fill {
+    height: 100%;
+    width: 0;
+    background: var(--accent);
+    border-radius: 999px;
+    transition: width 1.2s ease;
 }
 
 /* PROJECTS */
-.section-title {
-    text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-}
-
 .projects {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
 }
 
 .project {
-    background: white;
+    background: var(--card);
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     max-width: 300px;
     padding: 1.2rem;
-    text-align: left;
-    transition: transform 0.25s, box-shadow 0.25s;
+    transition: transform 0.25s;
 }
 
 .project:hover {
     transform: translateY(-6px);
-    box-shadow: 0 14px 28px rgba(0,0,0,0.12);
 }
 
 .project img {
@@ -124,50 +155,13 @@ main {
     border-radius: 6px;
 }
 
-.project h3 {
-    margin: 0.8rem 0 0.4rem;
-}
-
-.tech {
-    font-size: 0.9rem;
-    color: #6b7280;
-    margin-bottom: 0.6rem;
-}
-
-/* CONTACT */
-.contact {
-    text-align: center;
-    margin-top: 4rem;
-}
-
-.contact a {
-    color: #2563eb;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.contact a:hover {
-    text-decoration: underline;
-}
-
 /* FOOTER */
 footer {
-    background-color: #111827;
+    background: var(--nav);
     color: #9ca3af;
     text-align: center;
     padding: 1.2rem 0;
     margin-top: 3rem;
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 1.6rem;
-    }
-
-    .hero h2 {
-        font-size: 1.7rem;
-    }
 }
 </style>
 </head>
@@ -176,6 +170,7 @@ footer {
 
 <header>
     <h1>Hannah Cahill</h1>
+    <button class="dark-toggle" onclick="toggleDark()">🌙</button>
     <nav>
         <a href="about.html">About</a>
         <a href="projects.html">Projects</a>
@@ -188,48 +183,83 @@ footer {
 <section class="hero">
     <img src="hannah.jpg" alt="Hannah Cahill">
     <h2>Digital Forensics & Cybersecurity Student</h2>
-    <p>Information Science and Technology major focused on investigating and securing digital systems.</p>
-    <a class="cta-btn" href="projects.html">View My Projects</a>
+    <p>Focused on investigating and securing digital systems.</p>
+    <br>
+    <a class="cta-btn" href="resume.pdf" download>⬇ Download Resume</a>
 </section>
 
-<h2 class="section-title">Featured Projects</h2>
+<!-- SKILLS -->
+<section class="skills">
+    <h2>Technical Skills</h2>
 
+    <div class="skill">
+        <div class="skill-name">HTML / CSS</div>
+        <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
+    </div>
+
+    <div class="skill">
+        <div class="skill-name">JavaScript</div>
+        <div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div>
+    </div>
+
+    <div class="skill">
+        <div class="skill-name">Digital Forensics</div>
+        <div class="skill-bar"><div class="skill-fill" data-width="70%"></div></div>
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
 <section class="projects">
 
     <div class="project">
         <img src="bmicalculator.jpg" alt="BMI Calculator">
         <h3>BMI Calculator</h3>
-        <div class="tech">HTML • CSS • JavaScript</div>
-        <p>BMI calculator designed to meet United States Air Force standards.</p>
+        <p>USAF standards BMI calculator.</p>
     </div>
 
     <div class="project">
         <img src="prototype.jpg" alt="Transportation App">
         <h3>Transportation App</h3>
-        <div class="tech">UI Prototype</div>
-        <p>Interactive prototype for a modern transportation mobile application.</p>
+        <p>Mobile transportation prototype.</p>
     </div>
 
-    <div class="project">
-        <img src="ami.jpg" alt="Dropdown Menu">
-        <h3>Dropdown Menu</h3>
-        <div class="tech">HTML • CSS</div>
-        <p>Responsive dropdown navigation component with clean UI behavior.</p>
-    </div>
-
-</section>
-
-<section class="contact">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:hannahcahill55@gmail.com">hannahcahill55@gmail.com</a></p>
 </section>
 
 </main>
 
 <footer>
-    <p>&copy; 2025 Hannah Cahill. All rights reserved.</p>
+    <p>&copy; 2025 Hannah Cahill</p>
 </footer>
+
+<script>
+/* DARK MODE */
+function toggleDark() {
+    document.body.classList.toggle("dark");
+    localStorage.setItem("darkMode",
+        document.body.classList.contains("dark"));
+}
+
+if (localStorage.getItem("darkMode") === "true") {
+    document.body.classList.add("dark");
+}
+
+/* SKILL ANIMATION */
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.width = entry.target.dataset.width;
+        }
+    });
+});
+
+document.querySelectorAll('.skill-fill')
+    .forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
+
+
+
 
