@@ -1,158 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hannah's Website</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            color: #333;
-            background-color: #ffe0ea;
-        }
-        header {
-            background-color: #98fbcb;
-            color: white;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        .outline {
-            text-shadow: 
-        -1px -1px 0 black, /* Top-left shadow */
-        1px -1px 0 black,  /* Top-right shadow */
-        -1px 1px 0 black,  /* Bottom-left shadow */
-        1px 1px 0 black;   /* Bottom-right shadow */
-            color: #FFFFFF;
-        }
-        nav {
-            margin-top: 1rem;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-weight: bold;
-        }
-        main {
-            padding: 2rem;
-            text-align: center;
-        }
-        .hero {
-            margin: 2rem 0;
-        }
-        .hero img {
-            max-width: 200px;
-            border-radius: 50%;
-        }
-        .hero h2 {
-            margin: 1rem 0;
-            font-size: 2rem;
-        }
-        .projects {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-        }
-        .project {
-            background: #fff0f5;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            max-width: 300px;
-            padding: 1rem;
-            text-align: left;
-            transition: transform 0.2s;
-        }
-        .project:hover {
-            transform: scale(1.05);
-        }
-        .project img {
-            max-width: 100%;
-            border-radius: 4px;
-        }
-        .project h3 {
-            margin: 1rem 0 0.5rem;
-        }
-        .social-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        .social-links a {
-        font-size: 1.2rem;
-        color: #fb6f92;
-        text-decoration: none;
-        transition: color 0.3s;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Add subtle shading */
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hannah Cahill | Portfolio</title>
 
-        .social-links a:hover {
-            color: #2c3e50;
-        }
-        footer {
-            background-color: #98fbcb;
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
-        }
-        footer p {
-            margin: 0;
-        }
-    </style>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #1f2937;
+    background-color: #f9fafb;
+}
+
+/* HEADER */
+header {
+    background-color: #111827;
+    color: white;
+    padding: 1.2rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+nav {
+    margin-top: 0.5rem;
+}
+
+nav a {
+    color: #d1d5db;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #60a5fa;
+}
+
+/* MAIN */
+main {
+    padding: 3rem 1.5rem;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.hero img {
+    width: 160px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.hero h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+}
+
+.cta-btn {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 0.7rem 1.4rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.25s;
+}
+
+.cta-btn:hover {
+    background: #1d4ed8;
+}
+
+/* PROJECTS */
+.section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.project {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    max-width: 300px;
+    padding: 1.2rem;
+    text-align: left;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.project:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+}
+
+.project img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.project h3 {
+    margin: 0.8rem 0 0.4rem;
+}
+
+.tech {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-bottom: 0.6rem;
+}
+
+/* CONTACT */
+.contact {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.contact a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+    background-color: #111827;
+    color: #9ca3af;
+    text-align: center;
+    padding: 1.2rem 0;
+    margin-top: 3rem;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    .hero h2 {
+        font-size: 1.7rem;
+    }
+}
+</style>
 </head>
+
 <body>
-    <header>
-        <h1 class="outline">Welcome to My Website!</h1>
-        <nav class="outline">
-            <a href="about.html" class="outline">About</a>
-            <a href="projects.html" class="outline">Projects</a>
-            <a href="contact.html" class="outline">Contact</a>
-        </nav>
-    </header>
 
-    <main>
-        <section class="hero" id="about">
-            <img src="hannah.jpg" alt="Your Photo">
-            <h2>Hello, I'm Hannah</h2>
-            <p>Information Science and Technology Major and Aspiring Digital Forensics Investigator.</p>
-        </section>
+<header>
+    <h1>Hannah Cahill</h1>
+    <nav>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
 
-        <section class="projects" id="projects">
-            <div class="project">
-                <img src="bmicalculator.jpg" alt="Project 1">
-                <h3>BMI Calculator</h3>
-                <p>BMI Calculator for the United States Air Force.</p>
-            </div>
-            <div class="project">
-                <img src="prototype.jpg" alt="Project 2">
-                <h3>Transportation App</h3>
-                <p>Prototype of a transportation app.</p>
-            </div>
-            <div class="project">
-                <img src="ami.jpg" alt="Project 3">
-                <h3>Dropdown Menu</h3>
-                <p>AMI dropdown menu assignment.</p>
-            </div>
-        </section>
-        <br>
-        <section class="projects" id="contact">
-            <div class="project">
-            <center><h2>Contact Me</h2>
-            <p class="social-links">Feel free to reach out to me at <a href="mailto:hannahcahill55@gmail.com">hannahcahill55@gmail.com</a></p></center>
-            </div>
-        </section>
-    </main>
+<main>
 
-    <footer>
-        <p class="outline">&copy; 2025 Hannah Cahill. All rights reserved.</p>
-    </footer>
+<section class="hero">
+    <img src="hannah.jpg" alt="Hannah Cahill">
+    <h2>Digital Forensics & Cybersecurity Student</h2>
+    <p>Information Science and Technology major focused on investigating and securing digital systems.</p>
+    <a class="cta-btn" href="projects.html">View My Projects</a>
+</section>
+
+<h2 class="section-title">Featured Projects</h2>
+
+<section class="projects">
+
+    <div class="project">
+        <img src="bmicalculator.jpg" alt="BMI Calculator">
+        <h3>BMI Calculator</h3>
+        <div class="tech">HTML • CSS • JavaScript</div>
+        <p>BMI calculator designed to meet United States Air Force standards.</p>
+    </div>
+
+    <div class="project">
+        <img src="prototype.jpg" alt="Transportation App">
+        <h3>Transportation App</h3>
+        <div class="tech">UI Prototype</div>
+        <p>Interactive prototype for a modern transportation mobile application.</p>
+    </div>
+
+    <div class="project">
+        <img src="ami.jpg" alt="Dropdown Menu">
+        <h3>Dropdown Menu</h3>
+        <div class="tech">HTML • CSS</div>
+        <p>Responsive dropdown navigation component with clean UI behavior.</p>
+    </div>
+
+</section>
+
+<section class="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:hannahcahill55@gmail.com">hannahcahill55@gmail.com</a></p>
+</section>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 Hannah Cahill. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
+
