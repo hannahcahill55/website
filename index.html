@@ -1,264 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hannah Cahill | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hannah Cahill | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --bg: #f5f7fb;
+      --text: #0f172a;
+      --muted: #64748b;
+      --card: #ffffff;
+      --border: #e2e8f0;
+    }
 
-<style>
-:root {
-    --bg: #f9fafb;
-    --text: #1f2937;
-    --card: #ffffff;
-    --accent: #2563eb;
-    --nav: #111827;
-}
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-body.dark {
-    --bg: #0f172a;
-    --text: #e5e7eb;
-    --card: #1e293b;
-    --accent: #60a5fa;
-    --nav: #020617;
-}
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    transition: background 0.3s, color 0.3s;
-}
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-/* STICKY NAV */
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: var(--nav);
-    color: white;
-    padding: 1rem 0;
-    text-align: center;
-}
+    /* NAV — same structure, cleaner styling */
+    nav {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+    }
 
-nav a {
-    color: #d1d5db;
-    text-decoration: none;
-    margin: 0 1rem;
-    font-weight: 500;
-}
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
 
-nav a:hover {
-    color: var(--accent);
-}
+    .logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.2px;
+    }
 
-.dark-toggle {
-    position: absolute;
-    right: 20px;
-    top: 18px;
-    background: var(--accent);
-    border: none;
-    color: white;
-    padding: 6px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-}
+    .nav-links a {
+      margin-left: 26px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      position: relative;
+    }
 
-/* MAIN */
-main {
-    padding: 3rem 1.5rem;
-    max-width: 1100px;
-    margin: auto;
-}
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.25s ease;
+    }
 
-/* HERO */
-.hero {
-    text-align: center;
-    margin-bottom: 3rem;
-}
+    .nav-links a:hover::after {
+      width: 100%;
+    }
 
-.hero img {
-    width: 160px;
-    border-radius: 50%;
-}
+    /* HEADER — same content area, improved */
+    header {
+      padding: 60px 0 40px;
+      background: linear-gradient(to bottom, #ffffff, #f8fafc);
+      border-bottom: 1px solid var(--border);
+    }
 
-.cta-btn {
-    display: inline-block;
-    background: var(--accent);
-    color: white;
-    padding: 0.7rem 1.4rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 500;
-    margin-top: 1rem;
-}
+    .intro {
+      text-align: center;
+    }
 
-/* SKILLS */
-.skills {
-    margin-top: 4rem;
-}
+    .intro h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
 
-.skill {
-    margin-bottom: 1.2rem;
-}
+    .intro p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 14px;
+      font-size: 1.05rem;
+    }
 
-.skill-name {
-    margin-bottom: 6px;
-    font-weight: 500;
-}
+    .hero-actions {
+      margin-top: 18px;
+    }
 
-.skill-bar {
-    background: #e5e7eb;
-    border-radius: 999px;
-    overflow: hidden;
-    height: 10px;
-}
+    .resume-btn {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: 11px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
 
-body.dark .skill-bar {
-    background: #334155;
-}
+    .resume-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(37,99,235,0.25);
+    }
 
-.skill-fill {
-    height: 100%;
-    width: 0;
-    background: var(--accent);
-    border-radius: 999px;
-    transition: width 1.2s ease;
-}
+    /* SECTIONS */
+    section {
+      padding: 50px 0;
+    }
 
-/* PROJECTS */
-.projects {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-    margin-top: 2rem;
-}
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      letter-spacing: 0.3px;
+    }
 
-.project {
-    background: var(--card);
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    max-width: 300px;
-    padding: 1.2rem;
-    transition: transform 0.25s;
-}
+    /* PROJECT LIST — keeps list feel but polished */
+    .project-list {
+      display: grid;
+      gap: 18px;
+    }
 
-.project:hover {
-    transform: translateY(-6px);
-}
+    .project-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 20px;
+      transition: all 0.18s ease;
+    }
 
-.project img {
-    width: 100%;
-    border-radius: 6px;
-}
+    .project-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+    }
 
-/* FOOTER */
-footer {
-    background: var(--nav);
-    color: #9ca3af;
-    text-align: center;
-    padding: 1.2rem 0;
-    margin-top: 3rem;
-}
-</style>
+    .project-item h3 {
+      margin-bottom: 6px;
+      font-size: 1.05rem;
+    }
+
+    .project-item p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .project-links {
+      margin-top: 8px;
+    }
+
+    .project-links a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+      margin-right: 14px;
+      font-size: 0.9rem;
+    }
+
+    /* ABOUT */
+    .about-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+      color: var(--muted);
+    }
+
+    /* CONTACT */
+    .contact-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+      text-align: center;
+    }
+
+    .email {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+      background: #ffffff;
+      margin-top: 30px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 640px) {
+      .intro h1 { font-size: 1.8rem; }
+      .nav-links a { margin-left: 16px; }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Hannah Cahill</h1>
-    <button class="dark-toggle" onclick="toggleDark()">🌙</button>
-    <nav>
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
-
-<main>
-
-<section class="hero">
-    <img src="hannah.jpg" alt="Hannah Cahill">
-    <h2>Digital Forensics & Cybersecurity Student</h2>
-    <p>Focused on investigating and securing digital systems.</p>
-    <br>
-    <a class="cta-btn" href="resume.pdf" download>⬇ Download Resume</a>
-</section>
-
-<!-- SKILLS -->
-<section class="skills">
-    <h2>Technical Skills</h2>
-
-    <div class="skill">
-        <div class="skill-name">HTML / CSS</div>
-        <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
+  <!-- NAV (same structure as original) -->
+  <nav>
+    <div class="container nav-inner">
+      <div class="logo">Hannah Cahill</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
+  </nav>
 
-    <div class="skill">
-        <div class="skill-name">JavaScript</div>
-        <div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div>
+  <!-- INTRO (same layout idea, improved styling) -->
+  <header>
+    <div class="container intro">
+      <h1>Hello, I'm Hannah</h1>
+      <p>Information Science and Technology student focused on digital forensics, cybersecurity, and building clean, user-friendly web applications.</p>
+      <p><strong>Aspiring Digital Forensics Investigator</strong></p>
+      <div class="hero-actions">
+        <a class="resume-btn" href="resume.pdf" download>Download Resume</a>
+      </div>
     </div>
+  </header>
 
-    <div class="skill">
-        <div class="skill-name">Digital Forensics</div>
-        <div class="skill-bar"><div class="skill-fill" data-width="70%"></div></div>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <h2>About</h2>
+      <div class="about-box">
+        <p>
+          I am an Information Science and Technology student with a strong interest in digital forensics and cybersecurity. I enjoy analyzing problems, investigating digital evidence, and building practical web applications that are clean and accessible.
+        </p>
+      </div>
     </div>
+  </section>
 
-</section>
+  <!-- PROJECTS (same list style but professional cards) -->
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
 
-<!-- PROJECTS -->
-<section class="projects">
+      <div class="project-list">
 
-    <div class="project">
-        <img src="bmicalculator.jpg" alt="BMI Calculator">
-        <h3>BMI Calculator</h3>
-        <p>USAF standards BMI calculator.</p>
+        <div class="project-item">
+          <h3>BMI Calculator (USAF)</h3>
+          <p>Responsive calculator that computes BMI using USAF standards.</p>
+          <div class="project-links">
+            <a href="#">Live Demo</a>
+            <a href="#">GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <h3>Transportation App Prototype</h3>
+          <p>UI prototype focused on usability and navigation flow.</p>
+          <div class="project-links">
+            <a href="#">Live Demo</a>
+            <a href="#">GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <h3>Dropdown Menu Assignment</h3>
+          <p>Accessible navigation component built with semantic HTML and CSS.</p>
+          <div class="project-links">
+            <a href="#">Live Demo</a>
+            <a href="#">GitHub</a>
+          </div>
+        </div>
+
+      </div>
     </div>
+  </section>
 
-    <div class="project">
-        <img src="prototype.jpg" alt="Transportation App">
-        <h3>Transportation App</h3>
-        <p>Mobile transportation prototype.</p>
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <div class="contact-box">
+        <p>Feel free to reach out:</p>
+        <p><a class="email" href="mailto:hannahcahill55@gmail.com">hannahcahill55@gmail.com</a></p>
+      </div>
     </div>
+  </section>
 
-</section>
-
-</main>
-
-<footer>
-    <p>&copy; 2025 Hannah Cahill</p>
-</footer>
-
-<script>
-/* DARK MODE */
-function toggleDark() {
-    document.body.classList.toggle("dark");
-    localStorage.setItem("darkMode",
-        document.body.classList.contains("dark"));
-}
-
-if (localStorage.getItem("darkMode") === "true") {
-    document.body.classList.add("dark");
-}
-
-/* SKILL ANIMATION */
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.width = entry.target.dataset.width;
-        }
-    });
-});
-
-document.querySelectorAll('.skill-fill')
-    .forEach(el => observer.observe(el));
-</script>
+  <footer>
+    <div class="container">
+      © 2026 Hannah Cahill
+    </div>
+  </footer>
 
 </body>
 </html>
+
 
 
 
